@@ -1,9 +1,9 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 RUN apk upgrade --no-cache
 RUN apk add --no-cache ca-certificates openssl bash
 
-RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.8.4/bin/linux/amd64/kubectl \
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl \
   -O /usr/bin/kubectl && chmod +x /usr/bin/kubectl
 
 COPY bin/kd_linux_amd64 /bin/kd
